@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import Home from './Home';
 
+
 class UserProfile extends Component {
   render() {
     return (
@@ -12,6 +13,7 @@ class UserProfile extends Component {
 
           <div>Username: {this.props.userName}</div>
           <div>Member Since: {this.props.memberSince}</div>
+
         </div>
     );
   }

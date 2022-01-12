@@ -4,7 +4,37 @@ import Home from './Home.js';
 import AccountBalance from './AccountBalance'
 import UserProfile from './UserProfile.js';
 import LogIn from './Login.js';
-import { Redirect } from 'react-router-dom'
+
+let data = []
+
+// const debitFetch =  fetch('moj-api.herokuapp.com/debits' , {
+//   method: 'POST',
+//   headers:{'Content-Type':'application/json'} ,
+//   body:JSON.stringify(debitDatas)
+// })
+componentDidMount() {
+fetch('moj-api.herokuapp.com/credits')
+.then(response => response.json())
+  .then(
+    (result) => {
+      this.setState({
+        items:result.items
+      });
+    }
+  }
+
+  // Debits: <ul>
+  //       items.map(item => (
+  //         <li key={item.id}>
+  //           {item.description} {item.amount}
+  //         </li>
+  //       ))
+  //     </ul>
+  
+
+const debitData =  debitFetch => debitFetch.json();
+
+const creditData =  creditFetch=>creditFetch.json();
 
 const mockLogIn = (logInInfo) => {
   const newUser = {...this.state.currentUser}
